@@ -1,0 +1,162 @@
+body{
+	background-color: #d5f3ff;
+}
+
+  #header {
+      background: url("https://i.pinimg.com/originals/bd/a4/29/bda429c881d00df5726576ff9ab2e2b7.jpg") center center / cover no-repeat;
+      color: whitesmoke;
+    }
+
+    .navbar-custom {
+      background-color: #00a7e9;
+    }
+
+    .btn-custom {
+      background-color: lightskyblue;
+      color: darkblue;
+    }
+
+    * {
+      font-family: Raleway;
+    }
+
+.home { 
+	padding-top:40vh;
+	color: black;
+	position:relative;
+	z-index:1;
+	font-weight: 600;
+}
+
+.nav-cus{
+	z-index:1;
+}
+
+.slideshow {
+	position:fixed;
+	top:0;
+	left:0;
+	height:100%;
+	width:100%;
+	list-style:none;
+	z-index:0;
+	
+	padding:0;
+}
+
+.slideshow li{
+	
+	position:absolute;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+	
+	z-index:0;
+	
+	animation:imageAnimation 35s linear infinite;
+	background-size:cover;
+	opacity:0;
+	/*background-position:50% 50%;*/
+	
+	
+}
+
+
+.slideshow li:nth-child(1){
+	
+	background-image:url("https://kongu.ac.in/webalbum/img/kec.JPG")
+}
+.slideshow li:nth-child(2){
+	
+	background-image:url("https://kongu.ac.in/webalbum/img/kcc.jpg");
+	animation-delay:5s;
+}
+
+.slideshow li:nth-child(3){
+	
+	background-image:url("https://gyaanarth.com/wp-content/uploads/2022/07/190320043825_Kongu-Engineering-College.jpg");
+	animation-delay:10s;
+}
+
+.slideshow li:nth-child(4){
+	
+	background-image:url("https://th.bing.com/th/id/OIP.IXGDChrWrcY4-f_5oAUOwQHaEK?w=280&h=180&c=7&r=0&o=5&dpr=1.2&pid=1.7");
+	animation-delay:15s;
+}
+
+.slideshow li:nth-child(5){
+	
+	background-image:url("https://th.bing.com/th/id/OIP.prCOV6EJEMavKziGh60ZXgHaES?w=271&h=180&c=7&r=0&o=5&dpr=1.2&pid=1.7");
+	animation-delay:20s;
+}
+
+.slideshow li:nth-child(6){
+	
+	background-image:url("https://timess3spore.s3.amazonaws.com/ndata/media/Counsellor/CollegeImage/2023/04/23/1682252086.jpg");
+	animation-delay:25s;
+}
+
+.slideshow li:nth-child(7){
+	
+	background-image:url("https://th.bing.com/th/id/OIP.IXGDChrWrcY4-f_5oAUOwQHaEK?w=280&h=180&c=7&r=0&o=5&dpr=1.2&pid=1.7");
+	animation-delay:30s;
+}
+
+@keyframes imageAnimation{
+	
+	0%{
+		opacity:0;
+		animation-timing-function:ease-in;
+	}
+	5.7%{
+		opacity:1;
+		animation-timing-function:ease-out;
+	}
+	14.3%{
+		opacity:1;
+	}
+	20%{
+		opacity:0;
+	}
+}
+
+#headingGroup span {
+    color: #EA1C2C;
+}
+
+#headingGroup h1 {
+    font-weight: 100;
+    font-size: 4rem;
+}
+
+
+@media (max-width: 1080px) {
+    #headingGroup h1 {
+        font-weight: 100;
+        font-size: 3rem;
+    }
+    .blurb h2 {
+        font-size: 2rem;
+    }
+}
+
+
+.blurb h2 {
+   color: darkblue;
+   font-weight: 100;
+   font-size: 2.5rem;
+}
+
+.blurb p {
+    color:darkblue;
+    font-weight: 100;
+    font-size: 1.125rem;
+    line-height: 2;
+}
+
+.content {
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
