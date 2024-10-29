@@ -7,8 +7,9 @@ var passport=require("passport")
 var localStrategy=require("passport-local")
 var flash=require("connect-flash")
 
+const uri = "mongodb+srv://deepikapm22cse:ODQeCc5da43ojuTb@cluster0.89bkj.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
 
-mongoose.connect("mongodb://localhost:27017/dbms",{useNewUrlParser:true,useUnifiedTopology:true})
+mongoose.connect(uri,{useNewUrlParser:true,useUnifiedTopology:true})
 
 var Faculty = require("./models/faculty.js")
 var Publication = require("./models/publication.js")
@@ -533,7 +534,7 @@ function checkPublicationOwnership(req,res,next){
 }
 
 
-app.listen(process.env.PORT||3000,process.env.IP,function(){
+app.listen(process.env.PORT||8080,process.env.IP,function(){
 	
 	console.log("Server up")
 })
