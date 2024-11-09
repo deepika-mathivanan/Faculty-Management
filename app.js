@@ -153,7 +153,6 @@ app.get("/faculties/:id/add/:detail",checkFacultyOwnership,function(req,res){
 app.put("/faculties/:id/add",function(req,res){
 	
 	
-	
 	Faculty.findById(req.params.id,function(err,faculty){
 		if(err){
 			console.log(err)
