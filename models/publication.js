@@ -5,7 +5,7 @@ var publicationSchema = new mongoose.Schema({
 	id:Number,
 	year:String,
 	type:String,
-	googleScholar:String,
+	content:String,
 	isVerified:Number,
 	author:{
 		username:String,

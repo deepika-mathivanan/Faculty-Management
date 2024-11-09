@@ -1,47 +1,63 @@
 <%- include("../partials/header.ejs") %>
 
 <section id="header" class="jumbotron text-center">
-  <h1>
-    <%= publication.title %>
-  </h1>
-  <p class="lead text-custom">
-    <%= publication.author.username %>
-  </p>
+  <h1><%= publication.title %></h1>
+  <p class="lead text-custom"><%= publication.author.username %></p>
 </section>
 
 <div class="row justify-content-center">
   <% if (publication.isVerified == undefined || publication.isVerified == 0) { %>
     <a class="btn btn-outline-warning btn-sm" href="/faculties/<%= faculty._id %>/publications/<%= publication._id %>/verify">
-      <b>click to verify</b>
+      <b>Click to Verify</b>
     </a>
   <% } else { %>
-    <a class="btn btn-success btn-sm" href="#">verified</a>
+    <a class="btn btn-success btn-sm" href="#">Verified</a>
   <% } %>
 </div>
 
-<p>Id: <%= publication.id %></p>
-<p>Title: <%= publication.title %></p>
-<p>Year of Publishing: <%= publication.year %></p>
-<p>Type: <%= publication.type %></p>
+<!-- Table displaying publication details -->
+<div class="table-responsive my-4">
+  <table class="table table-bordered">
+    <tbody>
+      <tr>
+        <th scope="row">ID</th>
+        <td><%= publication.id %></td>
+      </tr>
+      <tr>
+        <th scope="row">Title</th>
+        <td><%= publication.title %></td>
+      </tr>
+      <tr>
+        <th scope="row">Year of Publishing</th>
+        <td><%= publication.year %></td>
+      </tr>
+      <tr>
+        <th scope="row">Type</th>
+        <td><%= publication.type %></td>
+      </tr>
+      <tr>
+        <th scope="row">Content</th>
+        <td>
+          <% if (publication.content && (publication.content.startsWith('http://') || publication.content.startsWith('https://'))) { %>
+            <a href="<%= publication.content %>" target="_blank" rel="noopener noreferrer">
+              View Content
+            </a>
+          <% } else { %>
+            <a href="http://<%= publication.content %>" target="_blank" rel="noopener noreferrer">
+              View Content
+            </a>
+          <% } %>
+        </td>
+      </tr>
+      
+    </tbody>
+  </table>
+</div>
 
-<!-- Content rendered as a clickable URL -->
-<p>
-  googleScholar: 
-  <a href="<%= publication.content %>" target="_blank" rel="noopener noreferrer">
-    <%= publication.content %>
-  </a>
-</p>
-
-<br><br>
-
-<a class="btn btn-block btn-success" href="/faculties/<%= faculty._id %>/publications/<%= publication._id %>/edit">
-  edit
-</a>
+<a class="btn btn-block btn-success" href="/faculties/<%= faculty._id %>/publications/<%= publication._id %>/edit">Edit</a>
 
 <form action="/faculties/<%= faculty._id %>/publications/<%= publication._id %>?_method=DELETE" method="POST">
-  <button class="btn btn-block btn-danger">
-    delete
-  </button>
+  <button class="btn btn-block btn-danger">Delete</button>
 </form>
 
 <%- include("../partials/footer.ejs") %>

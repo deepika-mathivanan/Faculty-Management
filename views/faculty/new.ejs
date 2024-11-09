@@ -1,53 +1,39 @@
 <%- include("../partials/header.ejs")%>
 
-<form action="/faculties" method="POST">
+<form action="/faculties" method="POST" >
+    <div class="form-group">
+        <input type="text" class="form-control" placeholder="name" name="faculty[name]" required minlength="2" maxlength="50">
+    </div>
 
-			<div class="form-group">
-				<input type="text" class="form-control " placeholder="name" name="faculty[name]">
-			</div>
-	
-			<div class="form-group">
-				<input type="text" class="form-control " placeholder="image url" name="faculty[image]">
-			</div>
-			<div class="form-group">
-				<input type="text" class="form-control " placeholder="designation" name="faculty[designation]">
-			</div>
-			<div class="form-group">
-				<input type="text" class="form-control " placeholder="year of joining" name="faculty[yearOfJoining]">
-			</div>
-			<div class="form-group">
-				<input type="text" class="form-control " placeholder="highest academic degree" name="faculty[highestDegree]">
-			</div>
-			<div class="form-group">
-				<input type="text" class="form-control " placeholder="professional affiliation" name="faculty[affiliation]">
-			</div>
-			<div class="form-group">
-				<input type="email" class="form-control " placeholder="email" name="faculty[email]">
-			</div>
-			<div class="form-group">
-				<input type="number" class="form-control " placeholder="phone" name="faculty[phone]">
-			</div>
-			<button>
-				Submit	
-			</button>
-	<%/*
-			<div class="form-group">
-				<input type="text" class="form-control " placeholder="resume" name="faculty[resume]">
-			</div>
-			<div class="form-group">
-				<input type="text" class="form-control " placeholder="biography" name="faculty[biography]">
-			</div>
-			<div class="form-group">
-				<input type="text" class="form-control " placeholder="area of research" name="faculty[areaOfResearch]">
-			</div>
-			<div class="form-group">
-				<input type="text" class="form-control " placeholder="awards honors" name="faculty[awardsHonors]">
-			</div>
-			<div class="form-group">
-				<input type="text" class="form-control " placeholder="courses taught" name="award notes">
-			</div>
-	*/%>
+    <div class="form-group">
+        <input type="text" class="form-control" placeholder="image URL" name="faculty[image]" required pattern="https?://.+">
+    </div>
+
+    <div class="form-group">
+        <input type="text" class="form-control" placeholder="designation" name="faculty[designation]" required minlength="2" maxlength="100">
+    </div>
+
+	<div class="form-group">
+        <input type="date" class="form-control" name="faculty[yearOfJoining]" required placeholder="DD-MM-YYYY">
+    </div>
+
+    <div class="form-group">
+        <input type="text" class="form-control" placeholder="highest academic degree" name="faculty[highestDegree]" required maxlength="100">
+    </div>
+
+    <div class="form-group">
+        <input type="text" class="form-control" placeholder="professional affiliation" name="faculty[affiliation]" required minlength="2" maxlength="100">
+    </div>
+
+    <div class="form-group">
+        <input type="email" class="form-control" placeholder="email" name="faculty[email]" required>
+    </div>
+
+    <div class="form-group">
+        <input type="tel" class="form-control" placeholder="phone" name="faculty[phone]" required pattern="^\d{10,15}$" title="Please enter a valid phone number with 10 to 15 digits">
+    </div>
+
+    <button type="submit">Submit</button>
 </form>
-
 
 <%- include("../partials/footer.ejs")%>

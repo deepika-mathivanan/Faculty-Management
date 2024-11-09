@@ -534,7 +534,7 @@ function checkPublicationOwnership(req,res,next){
 }
 
 
-app.listen(process.env.PORT||8080,process.env.IP,function(){
+app.listen(process.env.PORT||9090,process.env.IP,function(){
 	
 	console.log("Server up")
 })
