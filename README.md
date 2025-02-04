@@ -1,2 +1,1 @@
-click to view
-https://faculty-management-l5ry.onrender.com/
+This system enables efficient management of faculty details, including registration, profile management, and faculty publications. It offers easy navigation with features like filtering by department, faculty picture uploads, and access to published research, all designed to improve user experience and administration.
